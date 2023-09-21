@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Skranji&display=swap');
 * {
   box-sizing: border-box;
   margin: 0;
-  
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
+  font-family: 'Skranji', cursive;
+}
+#listItem{
+  font-family: 'Skranji', cursive;
 }
 body{
   background-color: black;
@@ -14,12 +18,45 @@ body{
   align-items: center;
   height: 100vh;
 }
-.scroll {
-  width: 200px;
-  height: 400px;
-   background: red;
-  overflow: scroll;
+#toDoContainer{
+  display : flex;
+  flex-direction : column;
+  align-items : center;
+  justify-content : space-between;
+  border-radius : 15px;
 }
-.scroll::-webkit-scrollbar {
-   width: 12px;
+#cookiesDialog{
+  width : 400px;
+height : 200px;
+background-color : gray;
+border-radius : 15px;
+display : flex;
+flex-direction : column;
+gap : 10px;
+align-items : center;
+justify-content : center;
+position : fixed;
+left : 0px;
+top : 0px;
+}
+#info{
+padding : 10px;
+background-color : lightgray;
+}
+input{
+  ;
+}
+img {
+width : 50px;
+position : absolute;
+top : 10px;
+animation: rotate 5s linear infinite;
+}
+@keyframes rotate{
+  from{
+    transform : rotate(0deg);
+  }
+  to{
+    transform : rotate(360deg);
+  }
 }
