@@ -54,6 +54,12 @@ let info = document.createElement("p");
 info.id = "info";
 info.textContent =
   "Click on an item to mark it as completed, or right click to remove it";
+  info.addEventListener("contextmenu", (event) => {
+    info.style.display = "none";
+  })
+  info.addEventListener("click", (event) => {
+    info.style.display = "none";
+  })
 if (toDoArray.length > 0) {
   info.style.display = "none";
   cookiesContainer.style.display = "none";
@@ -64,8 +70,9 @@ listItemsContainer.style.maxHeight = "300px";
 listItemsContainer.style.overflowY = "auto";
 toDoContainer.append(info, listItemsContainer);
 let controlContainer = document.createElement("div");
-controlContainer.style.height = "40px";
+controlContainer.style.height = "50px";
 controlContainer.style.display = "flex";
+controlContainer.style.justifyContent = "space-between";
 controlContainer.style.paddingTop = "10px";
 controlContainer.style.paddingBottom = "10px";
 let textInput = document.createElement("input");
@@ -126,19 +133,19 @@ function toggleItem(itemNumber) {
 function updateItems() {
   listItemsContainer.innerHTML = "";
   for (let i = 0; i < toDoArray.length; i++) {
-    let listItem = document.createElement("li");
+    let listItem = document.createElement("div");
     if (toDoArray[i].completed == false) {
       listItem.style.textDecoration = "none";
       listItem.style.color = "black";
-      listItem.style.paddingLeft = "10px";
+      listItem.style.textAlign = "center";
+      listItem.style.border = "1px dotted darkgray";
     } else if (toDoArray[i].completed == true) {
-      listItem.style.textDecoration = "line-through";
       listItem.style.color = "darkgray";
+      listItem.textAlign = "left";
     }
     listItem.style.paddingRight = "10px";
     listItem.textContent = toDoArray[i].item;
-    listItem.style.fontFamily = "Arial";
-    listItem.style.fontSize = "20px";
+    listItem.style.fontSize = "25px";
     listItem.addEventListener("click", function () {
       toggleItem(i);
     });

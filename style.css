@@ -44,7 +44,12 @@ padding : 10px;
 background-color : lightgray;
 }
 input{
-  ;
+width : 230px;
+border-radius: 5px;
+}
+
+button{
+  border-radius: 10px;
 }
 img {
 width : 50px;
