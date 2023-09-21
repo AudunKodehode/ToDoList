@@ -10,8 +10,8 @@ let headerTextColor = "white";
 let itemFontSize = "20";
 let checkedColor = "darkgray";
 
-let toDoArray = [];
 
+let toDoArray = [];
 toDoArray = getToDoArrayFromCookie();
 
 let cookiesDialog = document.createElement("div");
@@ -56,6 +56,8 @@ function func()
     disAllowCookiesButton.textContent = "Also allow Cookies";
     allowCookiesButton.textContent = "Allow even more cookies";
 }
+
+
 
 function blockButton(){
 // move the cookieImage infront of the disAllowCookiesButton to block it
@@ -113,7 +115,9 @@ let info = document.createElement("p");
 info.textContent = "Click on an item to mark it as completed, or right click to remove it";
 info.style.padding = "10px";
 info.style.backgroundColor = "lightgray";
-
+if (toDoArray.length > 0){
+  info.style.display = "none"
+}
 
 let listItemsContainer = document.createElement("div");
 listItemsContainer.style.minWidth = listWidth + "px";
