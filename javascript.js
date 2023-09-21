@@ -23,7 +23,7 @@ disAllowCookiesButton.addEventListener("click", function () {
 });
 disAllowCookiesButton.addEventListener("mouseover", func, false);
 function func() {
-  disAllowCookiesButton.textContent = "Also allow Cookies";
+  disAllowCookiesButton.textContent = "Don't allow Cookies";
   allowCookiesButton.textContent = "Allow even more cookies";
 }
 answerContainer.append(allowCookiesButton, disAllowCookiesButton);
