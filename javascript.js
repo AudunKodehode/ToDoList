@@ -8,7 +8,7 @@ let headerText = "To Do List";
 let headerTextColor = "white";
 
 let itemFontSize = "20";
-let checkedColor = "green";
+let checkedColor = "darkgray";
 
 let toDoArray = [];
 
@@ -108,11 +108,18 @@ header.style.color = headerTextColor;
 header.textContent = headerText;
 toDoContainer.append(header);
 
+
+let info = document.createElement("p");
+info.textContent = "Click on an item to mark it as completed, or right click to remove it";
+info.style.padding = "10px";
+info.style.backgroundColor = "lightgray";
+
+
 let listItemsContainer = document.createElement("div");
 listItemsContainer.style.minWidth = listWidth + "px";
 listItemsContainer.style.maxHeight = maxHeight + "px";
 listItemsContainer.style.overflowY = "auto";
-toDoContainer.append(listItemsContainer);
+toDoContainer.append(info, listItemsContainer);
 
 let controlContainer = document.createElement("div");
 controlContainer.style.height = 40 + "px";
@@ -142,9 +149,11 @@ function addItem() {
   toDoArray.push({ item, completed: false });
   updateItems();
   textInput.value = "";
+  info.style.display = "none";
 }
 
 function removeItem(itemNumber) {
+  info.style.display = "none";
   toDoArray.splice(itemNumber, 1);
   updateItems();
   setToDoArrayCookie();
