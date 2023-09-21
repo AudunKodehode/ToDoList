@@ -142,6 +142,8 @@ function updateItems() {
     } else if (toDoArray[i].completed == true) {
       listItem.style.color = "darkgray";
       listItem.textAlign = "left";
+      listItem.style.textDecoration = "line-through";
+      listItem.style.textDecorationColor = "green";
     }
     listItem.style.paddingRight = "10px";
     listItem.textContent = toDoArray[i].item;
