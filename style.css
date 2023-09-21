@@ -47,7 +47,10 @@ input{
 width : 230px;
 border-radius: 5px;
 }
-
+::placeholder {
+  color: red;
+  text-align: center;
+}
 button{
   border-radius: 10px;
 }

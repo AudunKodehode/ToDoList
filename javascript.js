@@ -118,6 +118,10 @@ function addItem() {
     updateItems();
     textInput.value = "";
     info.style.display = "none";
+    textInput.placeholder = ""
+  } else{
+    textInput.placeholder = "Please enter an item"
+    textInput.placeholder.color = "red"
   }
 }
 function removeItem(itemNumber) {
