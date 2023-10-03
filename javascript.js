@@ -165,7 +165,9 @@ function updateItems() {
 function setToDoArrayCookie() {
   if (allowCookies == true) {
     const jsonToDoArray = JSON.stringify(toDoArray);
-    document.cookie = `toDoArray=${jsonToDoArray}; expires=Tue, 19 Jan 2038 03:14:07 GMT; path=/`;
+    let CookieDate = new Date;
+    CookieDate.setFullYear(CookieDate.getFullYear() +1);
+    document.cookie = `toDoArray=${jsonToDoArray}; ${CookieDate.toUTCString()}; path=/`;
   }
 }
 function getToDoArrayFromCookie() {

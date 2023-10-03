@@ -28,13 +28,11 @@ body{
 .settingsContainer{
   width: 200px;
   height: 200px;
-  background-color: red;
+  background-color: gray;
+  display: none;
 }
 .sideBySide{
   display: flex;
-}
-.settingsContainer{
-  display: none;
 }
 #cookiesDialog{
   width : 400px;
